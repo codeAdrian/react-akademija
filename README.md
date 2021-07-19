@@ -66,6 +66,9 @@ Pagination - prima propove za prikaz podataka iz `pagination` objekta `data.json
 
 ### Korisne informacije
 
+Dovršeni zadatak 1. dana: https://react-akademija-app-1.netlify.app/
+Statičke komponente sa prosljeđenim propovima. Trenutno nema funkcionalnosti.
+
 Tablice
 https://www.w3schools.com/html/html_tables.asp
 
@@ -122,7 +125,10 @@ Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.js)
 `https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?page=${currentPage}`
 `currentPage` - varijabla čija je početna vrijednost 1 i ona se može promjeniti preko paginacije
 
-## Informacije
+## Korisne informacije
+
+Dovršeni zadatak 2. dana: https://react-akademija-app-2.netlify.app/
+Search vraća rezultat, podaci tablice se promjene klikom na next i previous button elemente
 
 API vraća dva objekta:
 `pagination` - podatke za paginaciju (ukupan broj pageva, trenutni page, itd.)

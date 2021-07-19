@@ -94,4 +94,12 @@ Prijedlog strukture `App` komponente sa komponentama
   );
 ```
 
+Paginacija prima vrijednosti trenutnog pagea i ukupni broj pageva kao prop. Prosljediti hard-codane placeholder propove za sada.
+
+Paginacija ispisuje trenuti page u `Current page:` tekstu između 2 buttona
+
+Ukoliko je trenutni page 1, Postaviti “disabled” atribut na “Previous” button HTML elementa na `true`. U suprotnom na `false`.
+
+Ukoliko je trenutni page jednak ukupnom broju pageva, napraviti isto za `Next` button HTML element
+
 ## 2. dan

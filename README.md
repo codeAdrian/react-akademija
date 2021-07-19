@@ -42,7 +42,7 @@ npm run start
 
 4. Pozvati komponente u src/App.js
 
-5. U `src/App.jsx` je importan `data` iz `src/data.json` kojeg danas koristite kao placeholder podatke. Sutra radimo API integraciju.
+5. U `src/App.js` je importan `data` iz `src/data.json` kojeg danas koristite kao placeholder podatke. Sutra radimo API integraciju.
 
 6. Prosljediti placeholder podatke komponentama putem props-a.
 
@@ -114,11 +114,11 @@ Na button click poslati query na API i ispisati samo prvi rezultat responsea. Pr
 
 `Boolean(data.results.length) ? data.results[0].title : "No results"``
 
-Funkciju za submit i state treba napraviti u `App.jsx-u`. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a. Prosljediti nove propove za: promjenu input statea za query (onChange na input), trenutni query state (value na input) i funkciju za pretraživanje (onClick na button)
+Funkciju za submit i state treba napraviti u `App.js`-u. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a. Prosljediti nove propove za: promjenu input statea za query (onChange na input), trenutni query state (value na input) i funkciju za pretraživanje (onClick na button)
 
 ## Podatkovna tablica i podatkovni redak
 
-Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.jsx).
+Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.js).
 `https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?page=${currentPage}`
 `currentPage` - varijabla čija je početna vrijednost 1 i ona se može promjeniti preko paginacije
 
@@ -132,3 +132,40 @@ Paginacijom postavljati state koji je trenutni page odabran i dohvaćati nove re
 Ukoliko na API šaljete puno requestova, pričekajte minutu da prođe ograničenje ili mi se javite.
 
 Pripazite da imate dependency array u `useEffect`-u koji treba biti `[]` dok ne implementirate paginaciju, a onda treba ovisiti o odabranom pageu koji je sačuvan u state-u.
+
+Možete imati i do 4 useState poziva, ovisno kako strukturirate state. Preporučujem za početak da imate odvojeni state dok se ne uvježbate.
+
+- searchQuery - tekst koji se pretražuje
+- searchResult - rezultat pretraživanja
+- currentPage - odabrani page iz paginacije (početno stanje je 1)
+- data - paginacija i collection array podataka
+
+Koristite samo 1 useEffect sa dependency arrayom. Dohvaćanje podatka kolekcije (paginacija + collection) kada se aplikacija mounta i kada se currentPage promjeni.
+
+Imate definiran search button handler funkciju - poziva API za pretraživanje.
+
+Prijedlog `useEffect` i submit funkcije u `App.js`-u
+
+```jsx
+/* Dohvaćanje kolekcije */
+useEffect(() => {
+  fetch()
+    /* Dohvaćanje API URL-a sa prosljeđenom paginacijom */
+    .then((data) => data.json())
+    .then((data) => {
+      /* Dopuniti sa state update funkcijom */
+    });
+}, [currentPage]);
+
+const handleSearch = () => {
+  fetch(
+    `https://api.discogs.com/database/search?q=${query}&key=OxnCHJEetGbikaamOyaK&secret=wQCIuWuanmRVVeWqNVFWMfSJldHbqnAi`
+  )
+    .then((data) => data.json())
+    .then((data) => {
+      setQueryResult(
+        Boolean(data.results.length) ? data.results[0].title : "No results"
+      );
+    });
+};
+```

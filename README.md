@@ -114,4 +114,21 @@ Na button click poslati query na API i ispisati samo prvi rezultat responsea. Pr
 
 `Boolean(data.results.length) ? data.results[0].title : "No results"``
 
-Funkciju za submit i state treba napraviti u `App.jsx-u`. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a.
+Funkciju za submit i state treba napraviti u `App.jsx-u`. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a. Prosljediti nove propove za: promjenu input statea za query (onChange na input), trenutni query state (value na input) i funkciju za pretraživanje (onClick na button)
+
+## Podatkovna tablica i podatkovni redak
+
+Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.jsx).
+`https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?page=${currentPage}`
+`currentPage` - varijabla čija je početna vrijednost 1 i ona se može promjeniti preko paginacije
+
+## Informacije
+
+API vraća dva objekta:
+`pagination` - podatke za paginaciju (ukupan broj pageva, trenutni page, itd.)
+`collection` - array podataka za tablicu za trenutni page.
+
+Paginacijom postavljati state koji je trenutni page odabran i dohvaćati nove rezultate tablice
+Ukoliko na API šaljete puno requestova, pričekajte minutu da prođe ograničenje ili mi se javite.
+
+Pripazite da imate dependency array u `useEffect`-u koji treba biti `[]` dok ne implementirate paginaciju, a onda treba ovisiti o odabranom pageu koji je sačuvan u state-u.

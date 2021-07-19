@@ -54,8 +54,31 @@ npm run start
 
 6. Prosljediti placeholder podatke komponentama putem props-a.
 
-SearchForm -
+SearchForm - prima standardni React "children" prop koji će sadržavati rezultat pretraživanja. U suprotnom će ispisati "No results".
+
+CollectionTable - prima standardni React "children" prop koji će sadržavati podatkovne retke koji se iterativno pozivaju ovisno o `releases` array-u podataka iz `data.json` datoteke.
+
+TableItem - prima propove za prikaz podataka iz `releases` array-a `data.json` datoteke.
+
+Pagination - prima propove za prikaz podataka iz `pagination` objekta `data.json` datoteke. Potrebni su `pages` koji sadrži ukupan broj pageva i `page` koji sadrži podatak koji je trenutni page.
 
 7. Dodati stilove po želji (`src/index.css`) ili da izgleda slično sljedećem dizajnu.
 
+### Korisne informacije
+
+Prijedlog strukture App.json-a
+
+```jsx
+
+```
+
 ## 2. dan
+
+export const Pagination = ({ page, pages }) => {
+return (
+
+      export const Search = ({ children }) => {
+
+          export const Table = ({ children }) => {
+
+              export const TableItem = ({ id, title, year, artists, genres, styles }) => {

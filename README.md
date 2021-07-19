@@ -103,3 +103,15 @@ Ukoliko je trenutni page 1, Postaviti “disabled” atribut na “Previous” b
 Ukoliko je trenutni page jednak ukupnom broju pageva, napraviti isto za `Next` button HTML element
 
 ## 2. dan
+
+## Forma za pretraživanje
+
+API URL: `https://api.discogs.com/database/search?q=${query}&key=OxnCHJEetGbikaamOyaK&secret=wQCIuWuanmRVVeWqNVFWMfSJldHbqnAi
+
+`query` je varijabla teksta forme koji treba predati preko state-a
+
+Na button click poslati query na API i ispisati samo prvi rezultat responsea. Prvi rezultat iz `data` response-a se može dohvatiti ovako:
+
+`Boolean(data.results.length) ? data.results[0].title : "No results"``
+
+Funkciju za submit i state treba napraviti u `App.jsx-u`. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a.

@@ -127,6 +127,10 @@ Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.js)
 
 ## Korisne informacije
 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+https://reactjs.org/docs/hooks-state.html
+https://reactjs.org/docs/hooks-effect.html
+
 Dovršeni zadatak 2. dana: https://react-akademija-app-2.netlify.app/ <br/>
 Search vraća rezultat, podaci tablice se promjene klikom na next i previous button elemente
 

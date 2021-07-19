@@ -66,7 +66,7 @@ Pagination - prima propove za prikaz podataka iz `pagination` objekta `data.json
 
 ### Korisne informacije
 
-Dovršeni zadatak 1. dana: https://react-akademija-app-1.netlify.app/
+Dovršeni zadatak 1. dana: https://react-akademija-app-1.netlify.app/ <br/>
 Statičke komponente sa prosljeđenim propovima. Trenutno nema funkcionalnosti.
 
 Tablice
@@ -127,7 +127,7 @@ Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.js)
 
 ## Korisne informacije
 
-Dovršeni zadatak 2. dana: https://react-akademija-app-2.netlify.app/
+Dovršeni zadatak 2. dana: https://react-akademija-app-2.netlify.app/ <br/>
 Search vraća rezultat, podaci tablice se promjene klikom na next i previous button elemente
 
 API vraća dva objekta:

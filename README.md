@@ -56,7 +56,7 @@ Pagination - prima propove za prikaz podataka iz `pagination` objekta `data.json
 
 7. Dodati stilove u `src/index.css` da aplikacija izgleda što bliže screenshotu ili proizvoljno
 
-!["./dan-1.png"]("./dan-1.png")
+![](./dan-1.png)
 
 ### Bonus zadaci
 

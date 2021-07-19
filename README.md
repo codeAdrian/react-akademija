@@ -1,21 +1,13 @@
 Instalirati NodeJS i NPM
 https://nodejs.org/en/
 
-Provjeriti radi li NPM u terminalu
+Provjeriti radi li NPM u terminalu (command prompt-u)
 
 ```
 npm -v
 ```
 
 Mora vratiti neku verziju, npr "7.18.1".
-
-Ako ne radi, onda si instalirajte
-Bash terminal za Windows sustav i ponovo instalirajte NodeJS
-https://gitforwindows.org/
-
-Ukoliko ni tada ne radi, morate dodati NPM u Windows PATH. Pratite upute iz jedne od ova
-https://stackoverflow.com/a/27864253
-https://stackoverflow.com/a/27344046
 
 ## 1. Instalacija projekta (samo jednom)
 
@@ -42,7 +34,7 @@ npm run start
 2. Napraviti sljedeće komponente u `src/components` folderu:
 
    SearchForm - za formu (input i button)
-   CollectionTable - za tablicu sa podacima
+   CollectionTable - za tablicu sa podacima. Tablica mora imati `thead` sa `tr` i `th` zaglavljima i `tbody`. `tr` i `td` markup će se nalaziti u `TableItem` komponenti.
    TableItem - jedan podatkovni redak tablice (tr u tbody elementu)
    Pagination - paginacija (previous i next button i trenutni page)
 
@@ -62,23 +54,44 @@ TableItem - prima propove za prikaz podataka iz `releases` array-a `data.json` d
 
 Pagination - prima propove za prikaz podataka iz `pagination` objekta `data.json` datoteke. Potrebni su `pages` koji sadrži ukupan broj pageva i `page` koji sadrži podatak koji je trenutni page.
 
-7. Dodati stilove po želji (`src/index.css`) ili da izgleda slično sljedećem dizajnu.
+7. Dodati stilove u `src/index.css` da aplikacija izgleda što bliže screenshotu ili proizvoljno
+
+!["./dan-1.png"]("./dan-1.png")
+
+### Bonus zadaci
+
+1. U `public/index.html` promjeniti <title> vrijednost na vaše ime i prezime i naziv projekta
+
+2. U `public/index.html` dodati <link> element sa CSS linkom na `normalize.css` koji služi za izjednačavanje stilova između browsera. Ukoliko je dobro dodan, font u projektu bi se trebao promjeniti na Arial. https://cdnjs.com/libraries/normalize
 
 ### Korisne informacije
 
-Prijedlog strukture App.json-a
+Tablice
+https://www.w3schools.com/html/html_tables.asp
+
+Input
+https://www.w3schools.com/tags/tag_input.asp
+
+Button
+https://www.w3schools.com/tags/tag_button.asp
+
+Prijedlog strukture `App` komponente sa komponentama
 
 ```jsx
+  return (
+    <div>
+      <header>
+        {/* Dopuniti sa odgovarajućim HTML markupom i tekstom */>}
+      </header>
+      <SearchForm>{/* Dopuniti sa propsima */>}</SearchForm>
+      <CollectionTable>
+        {/* Dopuniti da se iterativno stvaraju TableItem komponente */>}
+        <TableItem {/* Dopuniti sa propsima */>} />
+      </CollectionTable>
 
+      <Pagination {/* Dopuniti sa propsima */>} />
+    </div>
+  );
 ```
 
 ## 2. dan
-
-export const Pagination = ({ page, pages }) => {
-return (
-
-      export const Search = ({ children }) => {
-
-          export const Table = ({ children }) => {
-
-              export const TableItem = ({ id, title, year, artists, genres, styles }) => {

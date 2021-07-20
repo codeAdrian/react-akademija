@@ -33,10 +33,10 @@ npm run start
 
 2. Napraviti sljedeće komponente u `src/components` folderu:
 
-   SearchForm - za formu (input i button)
-   CollectionTable - za tablicu sa podacima. Tablica mora imati `thead` sa `tr` i `th` zaglavljima i `tbody`. `tr` i `td` markup će se nalaziti u `TableItem` komponenti.
-   TableItem - jedan podatkovni redak tablice (tr u tbody elementu)
-   Pagination - paginacija (previous i next button i trenutni page)
+  - SearchForm - za formu (input i button)
+  - CollectionTable - za tablicu sa podacima. Tablica mora imati `thead` sa `tr` i `th` zaglavljima i `tbody`. `tr` i `td` markup će se nalaziti u `TableItem` komponenti.
+  - TableItem - jedan podatkovni redak tablice (tr u tbody elementu)
+  - Pagination - paginacija (previous i next button i trenutni page)
 
 3. Dodati HTML markup za komponente
 
@@ -107,9 +107,9 @@ Ukoliko je trenutni page jednak ukupnom broju pageva, napraviti isto za `Next` b
 
 ## 2. dan
 
-## Forma za pretraživanje
+### Forma za pretraživanje
 
-API URL: `https://api.discogs.com/database/search?q=${query}&key=OxnCHJEetGbikaamOyaK&secret=wQCIuWuanmRVVeWqNVFWMfSJldHbqnAi
+API URL: `https://api.discogs.com/database/search?q=${query}&key=OxnCHJEetGbikaamOyaK&secret=wQCIuWuanmRVVeWqNVFWMfSJldHbqnAi`
 
 `query` je varijabla teksta forme koji treba predati preko state-a
 
@@ -119,13 +119,14 @@ Na button click poslati query na API i ispisati samo prvi rezultat responsea. Pr
 
 Funkciju za submit i state treba napraviti u `App.js`-u. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a. Prosljediti nove propove za: promjenu input statea za query (onChange na input), trenutni query state (value na input) i funkciju za pretraživanje (onClick na button)
 
-## Podatkovna tablica i podatkovni redak
+### Podatkovna tablica i podatkovni redak
 
 Podatke za tablicu dohvatiti sa API-ja (obrisati import json datoteke iz App.js).
 `https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?page=${currentPage}`
+   
 `currentPage` - varijabla čija je početna vrijednost 1 i ona se može promjeniti preko paginacije
 
-## Korisne informacije
+### Korisne informacije
 
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 https://reactjs.org/docs/hooks-state.html

@@ -115,7 +115,7 @@ API URL: `https://api.discogs.com/database/search?q=${query}&key=OxnCHJEetGbikaa
 
 Na button click poslati query na API i ispisati samo prvi rezultat responsea. Prvi rezultat iz `data` response-a se može dohvatiti ovako:
 
-`Boolean(data.results.length) ? data.results[0].title : "No results"``
+`Boolean(data.results.length) ? data.results[0].title : "No results"`
 
 Funkciju za submit i state treba napraviti u `App.js`-u. `SearchForm` komponenti predati rezultat pretraživanja preko `children` prop-a. Prosljediti nove propove za: promjenu input statea za query (onChange na input), trenutni query state (value na input) i funkciju za pretraživanje (onClick na button)
 

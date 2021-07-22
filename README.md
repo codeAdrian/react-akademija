@@ -160,7 +160,7 @@ Prijedlog `useEffect` i submit funkcije u `App.js`-u
 ```jsx
 /* Dohvaćanje kolekcije */
 useEffect(() => {
-  fetch()
+  fetch(`https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?page=${currentPage}`)
     /* Dohvaćanje API URL-a sa prosljeđenom paginacijom */
     .then((data) => data.json())
     .then((data) => {
@@ -168,7 +168,8 @@ useEffect(() => {
     });
 }, [currentPage]);
 
-const handleSearch = () => {
+const handleSearch = (event) => {
+  event.preventDefault();
   fetch(
     `https://api.discogs.com/database/search?q=${query}&key=OxnCHJEetGbikaamOyaK&secret=wQCIuWuanmRVVeWqNVFWMfSJldHbqnAi`
   )
